@@ -16,9 +16,9 @@
         /// <summary>
         /// Печать сообщения
         /// </summary>
-        public void PrintMessage()
+        public void PrintMessage(string text)
         {
-            Console.WriteLine(this.MessageText);
+            Console.WriteLine(text);
         }
     }
     /// <summary>
@@ -33,7 +33,7 @@
         /// <param name="message">Тип сообщения</param>
         public static void SendMessage<T>(T message) where T : Message
         {
-            message.PrintMessage();
+            message.PrintMessage(message.MessageText);
         }
     }
 }
