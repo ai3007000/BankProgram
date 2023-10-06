@@ -21,6 +21,10 @@
             Console.WriteLine(text);
         }
     }
+    class EmailMessage : Message
+    {
+        public EmailMessage(string MessageText) : base(MessageText) { }
+    }
     /// <summary>
     /// Мессенджер
     /// </summary>
