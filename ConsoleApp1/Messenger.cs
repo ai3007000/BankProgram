@@ -16,10 +16,17 @@
         /// <summary>
         /// Печать сообщения
         /// </summary>
-        public void PrintMessage()
+        public void PrintMessage(string MessageText)
         {
-            Console.WriteLine(this.MessageText);
+            Console.WriteLine(MessageText);
         }
+    }
+    /// <summary>
+    /// Email сообщение
+    /// </summary>
+    class EmailMessage : Message
+    {
+        public EmailMessage(string MessageText) : base(MessageText) { }
     }
     /// <summary>
     /// Мессенджер
@@ -33,7 +40,7 @@
         /// <param name="message">Тип сообщения</param>
         public static void SendMessage<T>(T message) where T : Message
         {
-            message.PrintMessage();
+            message.PrintMessage(message.MessageText);
         }
     }
 }
