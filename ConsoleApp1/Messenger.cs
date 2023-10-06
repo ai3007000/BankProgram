@@ -16,9 +16,9 @@
         /// <summary>
         /// Печать сообщения
         /// </summary>
-        public void PrintMessage()
+        public void PrintMessage(string MessageText)
         {
-            Console.WriteLine(this.MessageText);
+            Console.WriteLine(MessageText);
         }
     }
     class EmailMessage : Message
@@ -37,7 +37,7 @@
         /// <param name="message">Тип сообщения</param>
         public static void SendMessage<T>(T message) where T : Message
         {
-            message.PrintMessage();
+            message.PrintMessage(message.MessageText);
         }
     }
 }
